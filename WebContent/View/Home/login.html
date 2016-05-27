@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+	<title>Login One</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="../../Public/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="../../Public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../../Public/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+	<link href="../../Public/css/templatemo_style.css" rel="stylesheet" type="text/css">	
+	
+	<script type="text/javascript" src="../../Public/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">	
+			function checkLogin1(){
+				//获得输入的学号和密码
+	 			var username = $("#username").val();
+	 			var password = $("#password").val();
+				if(username!=""){   //用户名不为空
+					if(password !=""){      //密码不为空
+						//window.location.href = "./DoLogin";             //直接页面跳转
+						//jq异步跳转，并不刷新本页面
+						$.post('../../HomeController',{"username":username, "password":password, "a":"CheckLogin"},function(rst){
+							if(rst == "success"){  //返回"success"，用户名和密码验证成功
+								window.location.href="../../HomeController";//登录成功后回到（get）HomeController安排
+								//index.jsp
+							}else if(rst == "error"){ //返回"error",用户名和密码验证失败
+								alert("学号或密码错误！请重新输入！");
+							}else{
+								alert("deng");
+							}
+						});
+					}else{
+						alert("密码不能为空!");
+					}
+				}else{
+					alert("用户名不能为空！");
+				}
+			}
+	</script>
+</head>
+<body class="templatemo-bg-gray" style="background-image:url('../../Public/images/loginbg.jpg');background-position:center;background-repeat: no-repeat;background-size:cover">
+	<div class="container" >
+		<div class="col-md-12">
+			<h1 class="margin-bottom-15">学生在线考试系统</h1>
+			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="DoLogin" method="post">				
+		        <div class="form-group" >
+		          <div class="col-xs-12">		            
+		            <div class="control-wrapper">
+		            	<label for="username" class="control-label fa-label"><i class="fa fa-user fa-medium"></i></label>
+		                <input type="text" class="form-control" id="username" placeholder="Username">
+		            </div>		            	            
+		          </div>              
+		        </div>
+		        <div class="form-group">
+		          <div class="col-md-12">
+		          	<div class="control-wrapper">
+		            	<label for="password" class="control-label fa-label"><i class="fa fa-lock fa-medium"></i></label>
+		            	<input type="password" class="form-control" id="password" placeholder="Password">
+		            </div>
+		          </div>
+		        </div>
+	
+		        <div class="form-group">
+		          <div class="col-md-12">
+	             	<div class="checkbox control-wrapper">
+	                	<label>
+	                  		<input type="checkbox"> 记住信息
+                		</label>
+	              	</div>
+		          </div>
+		        </div>
+		      <!--   <div class="form-group">          
+		          <div class="col-md-12">
+		          	<div class="control-wrapper">
+		          		<input type="submit" value="Log in" class="btn btn-info">
+		          		<a href="forgot-password.html" class="text-right pull-right">忘记密码?</a>
+		          	</div>
+		          </div>
+		        </div> -->
+		        <hr>
+		        <div class="text-center">
+		        <input type="button" value="登录" onclick="checkLogin1()"/>
+		        &nbsp;<input type="reset">
+		        	<div class="col-md-12">
+		        		<!-- <label>Login with: </label>
+		        		<div class="inline-block">
+		        		   <a href="#"><i class="fa fa-facebook-square login-with"></i></a>
+			        		<a href="#"><i class="fa fa-twitter-square login-with"></i></a>
+			        		<a href="#"><i class="fa fa-google-plus-square login-with"></i></a>
+			        		<a href="#"><i class="fa fa-tumblr-square login-with"></i></a>
+			        		<a href="#"><i class="fa fa-github-square login-with"></i></a>
+		        		</div>		        		
+		        	</div> -->
+		        </div>
+		      </form>
+		      <div class="text-center">
+		      	<!--<a href="create-account.html" class="templatemo-create-new">Create new account <i class="fa fa-arrow-circle-o-right"></i></a>-->	
+		      </div>
+		</div>
+	</div>
+</body>
+</html>
