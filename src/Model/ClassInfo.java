@@ -11,6 +11,9 @@ public class ClassInfo {       //班级信息表
 	public int DelFlag;//删除标识
 	public String State;//状态
 	public String Remark;//备注
+<<<<<<< HEAD
 	
 	//得到已有的班级
+=======
+>>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 }

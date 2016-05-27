@@ -4,9 +4,9 @@ function update(){                             //用户信息修改按钮事件
 				//性别
 				updateTxtStyle($("#txtGender"));
 				//常用邮箱
-				updateTxtStyle($("#txtEmail"));
+				//updateTxtStyle($("#txtEmail"));
 				//联系电话
-				updateTxtStyle($("#txtTel"));
+				//updateTxtStyle($("#txtTel"));
 			}
 			function updateCancel(){                       //用户信息取消按钮事件
 				var txtName =$("txtName");   
@@ -16,9 +16,9 @@ function update(){                             //用户信息修改按钮事件
 					//性别
 					updateCancelTxtStyle($("#txtGender"));
 					//常用邮箱
-					updateCancelTxtStyle($("#txtEmail"));
+					//updateCancelTxtStyle($("#txtEmail"));
 					//联系电话
-					updateCancelTxtStyle($("#txtTel"));
+					//updateCancelTxtStyle($("#txtTel"));
 				}
 			}
 			function updateCancelTxtStyle(param){     //用户信息取消按钮下级事件
@@ -36,79 +36,39 @@ function update(){                             //用户信息修改按钮事件
 				//alert(param1);
 				if(param1 == "updatePwd"){
 					$("#"+param1).css("display", "");
-					$("#testManage").css("display","none");
+					$("#stuInfo").css("display","none");
 					$("#userInfo").css("display", "none");
 					
 				}else if(param1 == "userInfo"){
 					$("#"+param1).css("display", "");
-					$("#testManage").css("display","none");
+					$("#stuInfo").css("display","none");
 					$("#updatePwd").css("display", "none");
-				}else if(param1 == "testManage"){
+				}else if(param1 == "stuInfo"){
 					$("#"+param1).css("display", "");
 					$("#userInfo").css("display","none");
 					$("#updatePwd").css("display", "none");
 				}
-<<<<<<< HEAD
-				//ulShow();
-=======
 				ulShow();
->>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 			}
 			function ulShow(){                //实现试题管理下拉框显隐功能
-				//var testManage = $("#testManage");
+				//var stuInfo = $("#stuInfo");
 				var ul = $("#ul-1");
-				if($("#testManage").css("display") == "none"){
+				if($("#stuInfo").css("display") == "none"){
 					ul.css("display","none");
 				}else {
 					ul.css("display","");
 				}
 			}
 
-			function test_hiddenOp(param1){      //语文、英语、数学题框的显隐操作
+			function hiddenOp2(param1){      //语文、英语、数学题框的显隐操作
 				//alert(param1);
-				if(param1 == "Chinese_test"){
+				if(param1 == "querydiv"){
 					$("#"+param1).css("display", "");
-					$("#English_test").css("display","none");
-					$("#Math_test").css("display", "none");
+					$("#insertdiv").css("display","none");
 					
-				}else if(param1 == "English_test"){
+				}else if(param1 == "insertdiv"){
 					$("#"+param1).css("display", "");
-					$("#Chinese_test").css("display","none");
-					$("#Math_test").css("display", "none");
-				}else if(param1 == "Math_test"){
-					$("#"+param1).css("display", "");
-					$("#Chinese_test").css("display","none");
-					$("#English_test").css("display", "none");
+					$("#querydiv").css("display","none");
 				}
-<<<<<<< HEAD
-				//ulShow();
-=======
 				ulShow();
->>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 			}
-			$(function(){
-				$("#Chinesetest_addBtn").click(function(){
-					$(this).hide();
-					$("#Chinesetest_addPane").show();
-				});
-				$("#Chinesetest_addCancel").click(function(){
-					$("#Chinesetest_addBtn").show();
-					$("#Chinesetest_addPane").hide();
-				});
-				$("#Mathtest_addBtn").click(function(){
-					$(this).hide();
-					$("#Mathtest_addPane").show();
-				});
-				$("#Mathtest_addCancel").click(function(){
-					$("#Mathtest_addBtn").show();
-					$("#Mathtest_addPane").hide();
-				});
-				$("#Englishtest_addBtn").click(function(){
-					$(this).hide();
-					$("#Englishtest_addPane").show();
-				});
-				$("#Englishtest_addCancel").click(function(){
-					$("#Englishtest_addBtn").show();
-					$("#Englishtest_addPane").hide();
-				});
-			});

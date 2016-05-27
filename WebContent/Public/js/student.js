@@ -37,6 +37,7 @@ function hiddenOp(param1) { // 显隐操作
 	// alert(param1);
 	if (param1 == "updatePwd") {
 		$("#" + param1).css("display", "");
+<<<<<<< HEAD
 		$("#testManage").css("display", "none");
 		$("#userInfo").css("display", "none");
 
@@ -48,12 +49,38 @@ function hiddenOp(param1) { // 显隐操作
 		$("#" + param1).css("display", "");
 		$("#userInfo").css("display", "none");
 		$("#updatePwd").css("display", "none");
+=======
+		$("#studentExam").css("display", "none");
+		$("#userInfo").css("display", "none");
+		$("#queryScore").css("display", "none");
+
+	} else if (param1 == "userInfo") {
+		$("#" + param1).css("display", "");
+		$("#studentExam").css("display", "none");
+		$("#updatePwd").css("display", "none");
+		$("#queryScore").css("display", "none");
+	} else if (param1 == "studentExam") {
+		$("#" + param1).css("display", "");
+		$("#userInfo").css("display", "none");
+		$("#updatePwd").css("display", "none");
+		$("#queryScore").css("display", "none");
+	} else if(param1 == "queryScore"){
+		$("#" + param1).css("display", "");
+		$("#userInfo").css("display", "none");
+		$("#updatePwd").css("display", "none");
+		$("#studentExam").css("display", "none");
+>>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 	}
 	// ulShow();
 }
 /*
+<<<<<<< HEAD
  * function ulShow(){ //实现试题管理下拉框显隐功能 //var testManage = $("#testManage"); var
  * ul = $("#ul-1"); if($("#testManage").css("display") == "none"){
+=======
+ * function ulShow(){ //实现试题管理下拉框显隐功能 //var studentExam = $("#studentExam"); var
+ * ul = $("#ul-1"); if($("#studentExam").css("display") == "none"){
+>>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
  * ul.css("display","none"); }else { ul.css("display",""); } }
  */
 

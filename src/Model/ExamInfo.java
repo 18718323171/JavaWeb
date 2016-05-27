@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import Core.DBOper;
 
+<<<<<<< HEAD
 public class ExamInfo {       //锟斤拷锟斤拷锟斤拷息锟斤拷
 	public int Id;//锟斤拷锟�
 	public String ClassNum;//锟洁级锟斤拷锟�
@@ -38,29 +39,71 @@ public class ExamInfo {       //锟斤拷锟斤拷锟斤拷息锟斤拷
 		while(rst.next()){
 			ExamInfo e = new ExamInfo();
 			//取出班级名称存储
+=======
+public class ExamInfo {       //������Ϣ��
+	public int Id;//���
+	public String ClassNum;//�༶���
+	public String ClassName;//�༶����
+	public String PageNum;//�Ծ���
+	public String Subject;//��Ŀ
+	public String PageType;//�Ծ�����
+	public int TotalScore;//�ܷ�
+	public int ExamTime;//����ʱ��
+	public Date StartTime;//��ʼʱ��
+	public Date EndTime;//����ʱ��
+	public Date SubTime;//�ύʱ��
+	public String SubNum;//�ύ��
+	public int DelFlag;//ɾ����ʶ
+	public String State;//״̬
+	public String Remark;//��ע
+	
+	
+	public ArrayList<ExamInfo> getExamByStuNum(String stuNum) throws SQLException{
+		ArrayList<ExamInfo> ExamArr = new ArrayList<ExamInfo>();
+		String sql = "select e.* from ExamInfo e,StuInfo s where s.ClassNum = 					 e.ClassNum and s.StuNum = ? and e.DelFlag = 0";
+		String[] params={stuNum};
+		DBOper db=new DBOper();
+		ResultSet rst = db.executeQuery(sql, params);
+		while(rst.next()){
+			ExamInfo e = new ExamInfo();
+			//班级名称
+>>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 			if(rst.getString(3) == null){
 				e.ClassName = "";
 			}else{
 				e.ClassName =rst.getString(3);
 			}
+<<<<<<< HEAD
 			//取出试卷编号存储
+=======
+			//试卷编号
+>>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 			if(rst.getString(4) == null){
 				e.PageNum = "";
 			}else{
 				e.PageNum =rst.getString(4);
 			}
+<<<<<<< HEAD
 			//取出科目存储
+=======
+			//科目
+>>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 			if(rst.getString(5) == null){
 				e.Subject = "";
 			}else{
 				e.Subject =rst.getString(5);
 			}
+<<<<<<< HEAD
 			//取出试卷类型存储
+=======
+			//试卷类型
+>>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 			if(rst.getString(6) == null){
 				e.PageType = "";
 			}else{
 				e.PageType =rst.getString(6);
 			}
+<<<<<<< HEAD
 			//取出总分存储
 			e.TotalScore =rst.getInt(7);
 			//取出考试时间存储
@@ -122,6 +165,20 @@ public class ExamInfo {       //锟斤拷锟斤拷锟斤拷息锟斤拷
 				
 			ExamArr.add(e);//将第一个安排的考试对象封装进数组里面
 		}
+=======
+			//分数
+			e.TotalScore =rst.getInt(7);
+			//考试时间
+			e.ExamTime =rst.getInt(8);
+			
+			e.StartTime = rst.getDate(9);
+			e.EndTime = rst.getDate(10);
+			e.SubTime = rst.getDate(11);
+				
+			ExamArr.add(e);
+		}
+		
+>>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 		return ExamArr;
 	}
 }

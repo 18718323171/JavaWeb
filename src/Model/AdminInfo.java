@@ -1,12 +1,15 @@
 package Model;
 
 import java.sql.Date;
+<<<<<<< HEAD
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import Core.DBOper;
+=======
+>>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 
 public class AdminInfo {    //管理员信息表
 	public int Id;//编号
@@ -19,6 +22,7 @@ public class AdminInfo {    //管理员信息表
 	public String State;//状态
 	public String Remark;//备注
 	
+<<<<<<< HEAD
 	//管理员编号、密码验证学生登录信息
 	public  String CheckLogin(String username, String password){
 			String sql="select * from AdminInfo where AdminNum=? and AdminPwd=? and DelFlag=0";
@@ -89,4 +93,6 @@ public class AdminInfo {    //管理员信息表
 			int n =  db.executeUpdate(sql, params);
 			return n;
 		}
+=======
+>>>>>>> 65abe11d5afa90d8d1c97a6d235100bb289034f3
 }
